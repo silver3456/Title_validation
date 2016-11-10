@@ -14,14 +14,14 @@ public class Selenium {
 
 		WebDriver driver = new FirefoxDriver();    // Version 1.1 :: Firefox
 		// Test Case ID
-		String text_case_id = "TC-001.02";
+		String text_case_id = "TC-002.02";
 		// UserAgent RegEx /(?:Mozilla/5.0)\s(?:.*\))\s(?:Gecko/\d{8})\s(\w+)/(\d+.\d+)/
 		String useragentregex = "(?:Mozilla/5.0)\\s(?:\\(.*\\))\\s(?:Gecko/\\d{8})\\s(\\w+)/(\\d+.\\d+)";
 		String useragent = (String) ((JavascriptExecutor) driver).executeScript("return navigator.userAgent;");
 		Matcher m_browser = Pattern.compile(useragentregex).matcher(useragent);m_browser.find();
 		
-		String url = "http://www.learn2test.net";
-		String title_expected = "learn2test.net";
+		String url = "http://www.vk.com";
+		String title_expected = "Welcome2! | VK";
 		
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
